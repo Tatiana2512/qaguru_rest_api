@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.9.6'
+    id "io.freefair.lombok" version "6.0.0-m2"
+
+
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            'io.rest-assured:rest-assured:5.1.1',
+            'org.junit.jupiter:junit-jupiter:5.8.2',
+            "com.github.javafaker:javafaker:1.0.2",
+            'org.json:json:20220320'
+
+
+    )
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
