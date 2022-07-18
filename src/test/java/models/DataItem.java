@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
@@ -8,5 +9,6 @@ public class DataItem {
     private int year;
     private String name;
     private int id;
-    private String pantone_value;
+    @JsonProperty("pantone_value")
+    private String pantoneValue;
 }

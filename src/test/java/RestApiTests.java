@@ -326,7 +326,7 @@ public class RestApiTests {
 
         RestAssured.given()
                 .log().all()
-                .spec(spec).queryParam("delay", 3)
+                .spec(spec).queryParam("delay", 2)
                 .when()
                 .get()
                 .then().contentType(ContentType.JSON)
